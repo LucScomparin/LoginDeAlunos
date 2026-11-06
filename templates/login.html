@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}Login | Login de Alunos{% endblock %}
+
+{% block conteudo %}
+<h1 class="titulo-pagina">Entrar</h1>
+<p class="subtitulo">Digite seu RM para acessar sua conta.</p>
+
+<form class="formulario" method="post" action="/login">
+    <label for="rm">RM</label>
+    <input type="number" id="rm" name="rm" required>
+
+    <button type="submit" class="botao">Entrar</button>
+
+    <p class="formulario-link">Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Login de Alunos{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a href="/" class="logo">Login de Alunos</a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-botao" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="menu">
+                <a href="/">Home</a>
+                <a href="/integrantes">Integrantes</a>
+                <a href="/contato">Contato</a>
+                <a href="/login" class="botao-menu">Entrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container conteudo">
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 Login de Alunos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
