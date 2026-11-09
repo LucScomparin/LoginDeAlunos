@@ -20,12 +20,23 @@
                 <a href="/">Home</a>
                 <a href="/integrantes">Integrantes</a>
                 <a href="/contato">Contato</a>
-                <a href="/login" class="botao-menu">Entrar</a>
+                {% if session.get('rm') %}
+                    <a href="/logout">Sair</a>
+                    <a href="/perfil" class="botao-menu">Minha conta</a>
+                {% else %}
+                    <a href="/login" class="botao-menu">Entrar</a>
+                {% endif %}
             </nav>
         </div>
     </header>
 
     <main class="container conteudo">
+        {% with mensagens = get_flashed_messages(with_categories=true) %}
+            {% for categoria, mensagem in mensagens %}
+                <div class="alerta alerta-{{ categoria }}">{{ mensagem }}</div>
+            {% endfor %}
+        {% endwith %}
+
         {% block conteudo %}{% endblock %}
     </main>
 

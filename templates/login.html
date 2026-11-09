@@ -8,7 +8,7 @@
 
 <form class="formulario" method="post" action="/login">
     <label for="rm">RM</label>
-    <input type="number" id="rm" name="rm" required>
+    <input type="number" id="rm" name="rm" value="{{ rm or '' }}" required>
 
     <button type="submit" class="botao">Entrar</button>
 

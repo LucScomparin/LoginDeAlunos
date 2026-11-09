@@ -7,8 +7,12 @@
     <h1>Bem-vindo ao sistema de login de alunos</h1>
     <p>Cadastre-se com o seu RM e acesse sua conta de forma rápida e simples.</p>
     <div class="hero-botoes">
-        <a href="/cadastro" class="botao">Criar conta</a>
-        <a href="/login" class="botao botao-secundario">Já tenho conta</a>
+        {% if session.get('rm') %}
+            <a href="/perfil" class="botao">Ir para minha conta</a>
+        {% else %}
+            <a href="/cadastro" class="botao">Criar conta</a>
+            <a href="/login" class="botao botao-secundario">Já tenho conta</a>
+        {% endif %}
     </div>
 </section>
 
@@ -23,7 +27,7 @@
     </article>
     <article class="card">
         <h2>Gerenciamento</h2>
-        <p>Consulte e remova contas cadastradas quando precisar.</p>
+        <p>Edite seu nome ou exclua sua conta quando precisar.</p>
     </article>
 </section>
 {% endblock %}

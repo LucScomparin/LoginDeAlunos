@@ -12,7 +12,7 @@ def criar_tabela():
     )""")
     conexao.commit()
 
-
+3
 def ler_rm():
     while True:
         try:
@@ -82,3 +82,5 @@ def menu():
 criar_tabela()
 menu()
 conexao.close()
+
+
